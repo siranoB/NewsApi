@@ -1,0 +1,2 @@
+# NewsApi
+https://newsapi.org/ 
