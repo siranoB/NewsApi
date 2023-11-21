@@ -52,6 +52,14 @@ dependencies {
     implementation(libs.android.material)
     implementation(libs.androidx.constraintlayout)
 
+    // activity, fragment
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.fragment)
+
+    // lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.runtime)
+
     // timber
     implementation(libs.timber)
 
