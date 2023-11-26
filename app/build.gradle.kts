@@ -5,8 +5,8 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.kotlin.serialization)
-    id("kotlin-kapt")
-//    id("kotlin-parcelize")
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.ktlint)
 }
 
 android {
@@ -34,6 +34,7 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -47,6 +48,7 @@ android {
 }
 
 dependencies {
+    coreLibraryDesugaring(libs.desugar.jdk)
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
@@ -56,9 +58,15 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.fragment)
 
+    // splashscreen
+    implementation(libs.androidx.splashscreen)
+
     // lifecycle
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.androidx.lifecycle.runtime)
+
+    // paging
+    implementation(libs.androidx.paging)
 
     // timber
     implementation(libs.timber)
@@ -68,17 +76,27 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     kapt(libs.hilt.compiler)
 
+    // room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    implementation(libs.room.paging)
+    kapt(libs.room.compiler)
+
     // retrofit
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.2")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation(libs.okhttp3.okhttp)
+    implementation(libs.okhttp3.logging)
+    implementation(libs.retrofit)
 
     // serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.4.0")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+    implementation(libs.serialization.json)
+    implementation(libs.serialization.core)
+    implementation(libs.serialization.converter)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    // glide
+    implementation(libs.glide)
+
+    // test
+    testImplementation(libs.junit4)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
 }

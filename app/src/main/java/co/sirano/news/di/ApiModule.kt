@@ -1,8 +1,8 @@
 package co.sirano.news.di
 
 import co.sirano.news.BuildConfig
-import co.sirano.news.data.ApiService
-import co.sirano.news.data.NetworkConstants
+import co.sirano.news.data.remote.ApiService
+import co.sirano.news.data.remote.NetworkConstants
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -56,7 +56,7 @@ object ApiModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-        interceptor: HttpLoggingInterceptor,
+        interceptor: HttpLoggingInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .apply {

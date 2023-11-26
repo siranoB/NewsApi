@@ -2,13 +2,21 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor" >@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- 배경의 색을 지정-->
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <!-- 화면 중앙에 아이콘 지정-->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/news_24px</item>
+        <!-- 스플래시 화면 후에 보일 화면의 테마 지정-->
+        <item name="postSplashScreenTheme">@style/Theme.MyApplication</item>
+    </style>
 </resources>
