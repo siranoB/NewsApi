@@ -1,6 +1,7 @@
 # NewsApi
 API
-https://newsapi.org/ 
+
+<https://newsapi.org/> 
 ***
 ## 사용한 라리브러리 및 기술
 - [Coroutine](https://developer.android.com/kotlin/coroutines?hl=ko)
@@ -16,6 +17,8 @@ https://newsapi.org/
 - [Glide](https://github.com/bumptech/glide)
 - [Retrofit](https://square.github.io/retrofit/)
 - [RemoteMediator](https://developer.android.com/topic/libraries/architecture/paging/v3-network-db)
+
+
 ![RemoteMediator](img/image.png)
 
 ***
